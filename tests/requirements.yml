@@ -1,0 +1,4 @@
+---
+- src: https://github.com/openapphack/ansible-role-oah-daemonize
+  version: master
+  name: oah.daemonize

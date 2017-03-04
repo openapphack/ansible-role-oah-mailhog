@@ -1,9 +1,24 @@
 #! /bin/sh
+# /etc/init.d/mailhog
+#
+# MailHog init script.
+#
+# @author Jeff Geerling
+
+### BEGIN INIT INFO
+# Provides:          mailhog
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start MailHog at boot time.
+# Description:       Enable MailHog.
+### END INIT INFO
 
 PID=/var/run/mailhog.pid
 LOCK=/var/lock/mailhog.lock
 USER=nobody
-BIN=/opt/mailhog/mailhog
+BIN={{ mailhog_install_dir }}/mailhog
 DAEMONIZE_BIN={{ mailhog_daemonize_bin_path }}
 
 # Carry out specific functions when asked to by the system
